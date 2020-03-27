@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+
+  <script src="https://cdn.bootcss.com/react/16.10.2/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+
+<script>
+  var addBtn = document.querySelector('#addBtn')
+  var minusBtn = document.querySelector('#minusBtn')
+  var num = 0
+
+  function addNum() {
+    num += 1
+    render()
+    console.log(num)
+  }
+
+  function minusNum(params) {
+    num -= 1
+    render()
+  }
+  render()
+
+  function render(){
+    var span = React.createElement('span',{className:'red'},num)
+    var addBtn = React.createElement('button',{onClick:addNum},'+')
+    var minusBtn = React.createElement('button',{onClick:minusNum},'-')
+    var div = React.createElement('div',{className:'aa'},span,addBtn,minusBtn)
+    ReactDOM.render(div,document.getElementById('root'))
+  }
+
+
+  
+</script>
+
+</body>
+</html>
